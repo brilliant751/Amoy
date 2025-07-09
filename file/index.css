@@ -1,0 +1,366 @@
+@font-face {
+    font-family: 华文行楷;
+    src: url(字体/华文行楷.woff);
+}
+@font-face {
+    font-family: 隶书;
+    src: url(字体/隶书.woff);
+}
+@font-face {
+    font-family: 华文楷体;
+    src: url(字体/华文楷体.woff);
+}
+
+
+
+body {
+    background-color: #dff0fbfd;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    font-family: 华文楷体;
+    background-color: #1e6bb8;
+    background-image: url("../img/bgd.png");
+    color: #ffffff;
+    font-size: 40px;
+    text-align: center;
+    padding: 3px 0;
+}
+nav {
+    background-color: #194397;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 20px;
+    font-size: 20px;
+    border-radius: 5px; /* 添加圆角 */
+    padding: 5px 10px; /* 调整按钮内边距 */
+    transition: all 0.3s; /* 平滑过渡属性变化 */
+
+}
+
+nav a:hover {
+    background-color: rgba(3, 89, 108, 0.7); /* 半透明背景颜色 */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* 阴影效果 */
+    
+}
+
+.nav {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 20px;
+    font-size: 18px;
+    border-radius: 5px; /* 添加圆角 */
+    padding: 5px 10px; /* 调整按钮内边距 */
+    transition: all 0.3s; /* 平滑过渡属性变化 */
+}
+
+.first{
+    font-family: 华文楷体;
+    font-size: 30px;
+    width: 50%;
+    margin-left: 5%;
+    margin-top: 100px;
+    margin-bottom: 150px;
+    background-color: #ffffff;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    
+}
+
+.texts{
+    align-items: left;
+    margin: auto;
+}
+
+.poem{
+    text-align: center;
+    margin-top: 20px;
+    margin-right: 5%;
+    position: relative;
+}
+
+.tupian{
+    position: relative;
+}
+.image1{
+    width: 100%;
+    height: 300px;
+    border-radius: 5px;
+    opacity: 1;
+}
+.shuoming1{
+    font-family:隶书;
+    font-size: 40px;
+    color: #00489a;
+    text-align:justify;
+    text-decoration: underline;
+}
+a{
+    text-decoration: none;
+}
+.p1{
+    font-family: 隶书;
+    font-size:20px;
+    color: #00489a90;
+    text-align:justify;
+}
+
+.second{
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    margin: auto;
+    position: center;
+}
+.second1{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    margin: 10px 50px;
+    position: center;
+}
+
+.secondbb{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    margin: 10px auto;
+    position: center;
+}
+
+
+.third
+{
+    text-align:center;
+}
+
+#longer{
+    margin-top: 100px;
+}
+
+.biaoti
+{
+    font-family:隶书;
+    font-size: 100px;
+    color: #00418c;
+    text-align:center;
+    margin: auto;
+}
+.jianjie
+{
+    font-family:华文楷体;
+    font-size: 40px;
+    text-align:center;
+    margin: 10px;
+    margin-right: 20px;
+}
+.jianjie1
+{
+    font-family:华文楷体;
+    color: #002d9e;
+    font-size: 30px;
+    text-align:left;
+    margin: 10px;
+    margin-bottom: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.jianjie2
+{
+    font-family:华文楷体;
+    color: #5d0000;
+    font-size: 35px;
+    text-align:left;
+    margin: 10px;
+    margin-right: 20px;
+}
+.neirong{
+    font-family: 华文楷体;
+    font-size: 30px;
+    width: 50%;
+    margin: auto;
+    background-color: #ffffff;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+.tiaozhuan
+{
+    font-size:15px;
+    text-align:center;
+}
+.image2{
+    width: 5%;
+    height: auto;
+    position: fixed;
+    top: 150px; 
+    left: 150px;
+    z-index: 999;
+}
+
+.fifth{
+    font-family: 华文楷体;
+    font-size: 35px;
+    width: 50%;
+    margin: auto;
+    background-color: #ffffff;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+blockquote{
+    margin: 0;
+    margin-right: 20px;
+    text-indent: 2em;
+    align-items: center;
+}
+
+.vdo{
+    margin: 50px;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+audio{
+    width: 80%;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+video{
+    width: 80%;
+    height: 80%;
+}
+
+#index1{
+    background-color: #99a8d8a1;
+}
+
+#index2{
+    position: relative;
+    height:30%;
+}
+.l{
+    position: relative;
+    text-decoration:underline
+}
+.l:hover::before{
+    content: "";
+    position: absolute;
+    top:100%;
+    left:50%;
+    transform: translateX(-50%);
+    width:300px;
+    height:400px;
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 0px 0px 10px rbga(0,0,0,0.5);
+    z-index: 1;
+}
+.l1:hover::before{
+    background-image: url("../img/language/1.png");
+}
+.l2:hover::before{
+    background-image: url("../img/language/2.png");
+}
+.l3:hover::before{
+    background-image: url("../img/language/3.png");
+}
+.l4:hover::before{
+    background-image: url("../img/language/4.png");
+}
+.l5:hover::before{
+    background-image: url("../img/language/5.png");
+}
+.l6:hover::before{
+    background-image: url("../img/language/6.png");
+}
+.l7:hover::before{
+    background-image: url("../img/language/7.jpg");
+}
+.l8:hover::before{
+    background-image: url("../img/language/8.png");
+}
+
+.rw{
+    font-size: 50px;
+    font-family: 华文楷体;
+    color: #5d0000;
+}
+
+.jjbb
+{
+    font-family:华文楷体;
+    color: #5d0000;
+    font-size: 40px;
+    text-align: center;
+    margin: 10px;
+    margin-right: 20px;
+}
+
+.jjbb2
+{
+    font-family:华文楷体;
+    color: #f27228;
+    font-size: 60px;
+    text-align: center;
+    margin: 30px;
+
+}
+
+.jianjierl
+{
+    font-family:华文楷体;
+    color: #002d9e;
+    font-size: 30px;
+    text-align:left;
+    margin: 10px;
+    margin-bottom: 0;
+    margin-left: 50px;
+    margin-right: 0px;
+}
+
+.secondrw{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    margin: 10px auto;
+    position: center;
+
+}
+
+.imagerw_up{
+    width: 600px;
+    height: 400px;
+}
+
+.imagerw_long{
+    width: 600px;
+    height: 400px;
+}
+
+.imagerw{
+    width: 300px;
+    height: 400px;
+}
+
+.imagebb{
+    width: 100%;
+    height: 500px;
+    border-radius: 5px;
+    opacity: 1;
+}
+
+#expl{
+    text-indent: 4em;
+    color: red;
+}
