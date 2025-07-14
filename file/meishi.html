@@ -1,189 +1,275 @@
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Xiamen!</title>
     <link rel="stylesheet" href="index.css">
-    
+    <script src="../vue.global.js"></script>
 </head>
 <body>
-    <header> 
-        <h1>厦门の美食</h1>
-    </header>
-    <nav>
-        <a href="../index.html">主页</a>
-        <a href="meijing.html">美景篇</a>
-        <a href="meishi.html">美食篇</a>
-        <a href="wenhua.html">文化篇</a>
-    </nav>
-    <br>
-    <div>
-        <a href=""><img class="image2" src="../img/food/01.jpg" /></a>
-    </div>
-    <div class="fifth">
-        <ul>
-            <p class="jianjie">一个人的口味要宽一点、杂一点,
-                      <br>南甜北咸东辣西酸都要去尝一尝。<br>———汪曾祺 </p>
-        </ul>
-    </div>
-    <br>
-    <p class="jianjie">
-        欢迎来到厦门的美食篇！
-        <br>让我们一同来领略厦门的美食佳肴吧~
-    <br></p>
-    <p class="tiaozhuan">(点击图片下方文字可跳转)</p>
-    <table class="second">
-        <tr height=auto>
-            <td width="100">
-    
-            </td>
-            <td width="500">
-                      <div class="tupian">
-                          <img class="image1" src="../img/food/scm.jpg" />
-                      </div>
-                  </a>
-              </td>
-              <td width="100">
-    
-              </td>
-              <td width="500">
-                      <div class="tupian">
-                          <img class="image1" src="../img/food/t.jpg" />
-                      </div>
-                  </a>    
-              </td>
-              <td width="100">
-    
-              </td>
-              <td width="500">
-                    <div class="tupian">
-                        <img class="image1" src="../img/food/j.jpg" />
-                    </div>
-                </a>    
-            </td>
-            <td width="100">
-    
-            </td>
-        </tr>
-        <tr height="20">
-            <td width="100" height="20">
-    
-            </td>
-            <td class="third">
-                          <span class="shuoming1"><a href="#scm">沙茶面</a></span>
-                      </div>
-              </div>
-              </td>
-              <td width="100" height="20">
-    
-              </td>
-            <td class="third">
-                        <span class="shuoming1"><a href="#tsd">土笋冻</a></span>
-                      </div>
-                  </div>      
-              </td>
-              <td width="100" height="20">
-    
-              </td>
-              <td class="third">
-                        <span class="shuoming1"><a href="#jmy">姜母鸭</a></span>                                            
-                    </div>
-                </div>      
-            </td>
-            <td width="100" height="20">
-    
-            </td>
-        </tr>
-        </table>
-
-
-        <br>
-        <br>
-        <br>
-        <p class="biaoti" id="scm">···沙茶面···
-                <p class="jianjie">
-                    沙茶的香辣伴随着海鲜的鲜美，热腾腾的面条带来味蕾的跳跃。
-                    <br>沙茶面——一份令厦门人魂牵梦萦的美食。
-                </p>
-                <br>
-                <table class="second1">
-                    <tr>
-                        <td width=400px>
-                            <div class="tupian">
-                            <img class="image1" src="../img/food/沙茶面.jpg" />
-                            </div>
-                        </td>
-                        <td>
-                            <div>
-                            <span class="jianjie2">沙茶面</span>
-                            <p class="jianjie1">⚪“沙茶”系马来西亚语satay的译音，源出于东南亚。<br>
-                                ⚪它是用芝麻、葱蒜、香草、花生油、虾以及辣椒等制成的调味品，因有辣味故称“沙茶辣”。<br>
-                                ⚪沙茶面的制作方法简单，先把面条在开水中烫熟，趁热浇上滚烫的沙茶辣汤即成。<br>
-                            </p>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
+    <div id="app">
+        <header> 
+            <h1>{{ title }}</h1>
+        </header>
+        <nav>
+            <a v-for="item in navs" :key="item.text" :href="item.href">{{ item.text }}</a>
+        </nav>
         
         <br>
+        
+        <!-- 顶部横幅图片 -->
+        <div>
+            <a href=""><img class="image2" :src="bannerImage" /></a>
+        </div>
+        
+        <!-- 诗意引言 -->
+        <div class="fifth">
+            <ul>
+                <p class="jianjie">
+                    {{ poeticQuote.line1 }}<br>
+                    {{ poeticQuote.line2 }}<br>
+                    {{ poeticQuote.author }}
+                </p>
+            </ul>
+        </div>
+        
         <br>
-        <br>
-        <p class="biaoti" id="tsd">···土笋冻···
+        
+        <!-- 欢迎文字 -->
+        <p class="jianjie">
+            {{ welcomeText.line1 }}
+            <br>{{ welcomeText.line2 }}
+        </p>
+        <p class="tiaozhuan">{{ tipText }}</p>
+        
+        <!-- 美食预览表格 -->
+        <table class="second">
+            <tr height=auto>
+                <td width="100"></td>
+                <td width="500" v-for="(food, index) in mainFoods" :key="food.id">
+                    <div class="tupian">
+                        <img class="image1" :src="food.image" />
+                    </div>
+                </td>
+                <td width="100" v-if="index < mainFoods.length - 1"></td>
+                <td width="100"></td>
+            </tr>
+            <tr height="20">
+                <td width="100" height="20"></td>
+                <td class="third" v-for="(food, index) in mainFoods" :key="'title-' + food.id">
+                    <span class="shuoming1">
+                        <a :href="'#' + food.anchor">{{ food.name }}</a>
+                    </span>
+                </td>
+                <td width="100" height="20" v-if="index < mainFoods.length - 1"></td>
+                <td width="100" height="20"></td>
+            </tr>
+        </table>
+
+        <br><br><br>
+        
+        <!-- 美食详情动态组件 -->
+        <div v-for="food in foodDetails" :key="food.id" class="food-section">
+            <p class="biaoti" :id="food.anchor">···{{ food.name }}···</p>
             <p class="jianjie">
-                晶莹透明、鲜嫩脆滑
-                <br>土笋冻——勇敢者的咸味海鲜果冻
+                <span v-for="(line, index) in food.description" :key="index">
+                    {{ line }}<br v-if="index < food.description.length - 1">
+                </span>
             </p>
             <br>
+            
+            <!-- 美食图片和详细介绍 -->
             <table class="second1">
                 <tr>
                     <td width=400px>
                         <div class="tupian">
-                        <img class="image1" src="../img/food/土笋冻.jpg" />
+                            <img class="image1" :src="food.detailImage" />
                         </div>
                     </td>
                     <td>
                         <div>
-                        <span class="jianjie2">土笋冻</span>
-                        <p class="jianjie1">⚪土笋是生长在海滩泥沙中的一种软体小动物——海沙虫，因形似“小笋”而得名<br>
-                            ⚪它体内含有丰富的胶质，经过熬煮后所含的胶质融入水中，冷却后即成果冻状，口感清脆，味美甘甜<br>
-                            ⚪如果佐以萝卜酸、芥辣酱或是闽南特制鲜味汁，吃起来更加鲜嫩爽口，感觉如吃果冻般过瘾。<br>
-                        </p>
+                            <span class="jianjie2">{{ food.name }}</span>
+                            <p class="jianjie1">
+                                <span v-for="detail in food.details" :key="detail">
+                                    ⚪{{ detail }}<br>
+                                </span>
+                            </p>
                         </div>
                     </td>
                 </tr>
             </table>
-    
-    <br>
-    <br>
-    <br>
-    <p class="biaoti" id="jmy">···姜母鸭···
+            <br><br><br>
+        </div>
+        
+        <!-- 结尾总结 -->
         <p class="jianjie">
-            干香油润，滋味浓郁
-            <br>姜母鸭——是家的味道，是故乡的味道
+            <span v-for="(line, index) in conclusion" :key="index">
+                {{ line }}<br v-if="index < conclusion.length - 1">
+            </span>
         </p>
-        <br>
-        <table class="second1">
-            <tr>
-                <td width=400px>
-                    <div class="tupian">
-                    <img class="image1" src="../img/food/姜母鸭.jpg" />
-                    </div>
-                </td>
-                <td>
-                    <div>
-                    <span class="jianjie2">姜母鸭</span>
-                    <p class="jianjie1">⚪厦门姜母鸭以红面番鸭为原料，将半干的老姜片铺在砂锅内底，码放整理形态后的整只鸭子<br>
-                        ⚪它既能气血双补，同时搭配的鸭肉有滋阴降火功效。美食中的药膳滋而不腻，温而不燥，适合于春季食用。<br>
-                        ⚪成菜几无汤水，干香油润，滋味浓郁。生姜与芝麻油、鸭油的香气充分与鸭肉融合沁入。</p>
-                    </div>
-                </td>
-            </tr>
-        </table>
-
-<br>
-<br>
-<br>
-<p class="jianjie">
-    除了以上介绍的三种美食外，厦门还有很多好吃的等待着你的品尝~
-    <br>面线糊、四果汤、春卷、炸五香、烧肉粽……
-    <br>在想起的时候总会唾液滋生，勾起你的食欲！
-<br></p>
-<br><br><br>
+        <br><br><br>
+    </div>
+    
+    <script>
+    const { createApp } = Vue;
+    createApp({
+        data() {
+            return {
+                title: '厦门の美食',
+                navs: [
+                    { text: '主页', href: '../index.html' },
+                    { text: '美景篇', href: 'meijing.html' },
+                    { text: '美食篇', href: 'meishi.html' },
+                    { text: '文化篇', href: 'wenhua.html' }
+                ],
+                bannerImage: '../img/food/01.jpg',
+                poeticQuote: {
+                    line1: '一个人的口味要宽一点、杂一点,',
+                    line2: '南甜北咸东辣西酸都要去尝一尝。',
+                    author: '———汪曾祺'
+                },
+                welcomeText: {
+                    line1: '欢迎来到厦门的美食篇！',
+                    line2: '让我们一同来领略厦门的美食佳肴吧~'
+                },
+                tipText: '(点击图片下方文字可跳转)',
+                
+                // 主要美食预览
+                mainFoods: [
+                    { id: 1, name: '沙茶面', image: '../img/food/scm.jpg', anchor: 'scm' },
+                    { id: 2, name: '土笋冻', image: '../img/food/t.jpg', anchor: 'tsd' },
+                    { id: 3, name: '姜母鸭', image: '../img/food/j.jpg', anchor: 'jmy' }
+                ],
+                
+                // 详细美食信息
+                foodDetails: [
+                    {
+                        id: 1,
+                        name: '沙茶面',
+                        anchor: 'scm',
+                        description: [
+                            '沙茶的香辣伴随着海鲜的鲜美，热腾腾的面条带来味蕾的跳跃。',
+                            '沙茶面——一份令厦门人魂牵梦萦的美食。'
+                        ],
+                        detailImage: '../img/food/沙茶面.jpg',
+                        details: [
+                            '"沙茶"系马来西亚语satay的译音，源出于东南亚。',
+                            '它是用芝麻、葱蒜、香草、花生油、虾以及辣椒等制成的调味品，因有辣味故称"沙茶辣"。',
+                            '沙茶面的制作方法简单，先把面条在开水中烫熟，趁热浇上滚烫的沙茶辣汤即成。'
+                        ]
+                    },
+                    {
+                        id: 2,
+                        name: '土笋冻',
+                        anchor: 'tsd',
+                        description: [
+                            '晶莹透明、鲜嫩脆滑',
+                            '土笋冻——勇敢者的咸味海鲜果冻'
+                        ],
+                        detailImage: '../img/food/土笋冻.jpg',
+                        details: [
+                            '土笋是生长在海滩泥沙中的一种软体小动物——海沙虫，因形似"小笋"而得名',
+                            '它体内含有丰富的胶质，经过熬煮后所含的胶质融入水中，冷却后即成果冻状，口感清脆，味美甘甜',
+                            '如果佐以萝卜酸、芥辣酱或是闽南特制鲜味汁，吃起来更加鲜嫩爽口，感觉如吃果冻般过瘾。'
+                        ]
+                    },
+                    {
+                        id: 3,
+                        name: '姜母鸭',
+                        anchor: 'jmy',
+                        description: [
+                            '干香油润，滋味浓郁',
+                            '姜母鸭——是家的味道，是故乡的味道'
+                        ],
+                        detailImage: '../img/food/姜母鸭.jpg',
+                        details: [
+                            '厦门姜母鸭以红面番鸭为原料，将半干的老姜片铺在砂锅内底，码放整理形态后的整只鸭子',
+                            '它既能气血双补，同时搭配的鸭肉有滋阴降火功效。美食中的药膳滋而不腻，温而不燥，适合于春季食用。',
+                            '成菜几无汤水，干香油润，滋味浓郁。生姜与芝麻油、鸭油的香气充分与鸭肉融合沁入。'
+                        ]
+                    }
+                ],
+                
+                // 结尾总结
+                conclusion: [
+                    '除了以上介绍的三种美食外，厦门还有很多好吃的等待着你的品尝~',
+                    '面线糊、四果汤、春卷、炸五香、烧肉粽……',
+                    '在想起的时候总会唾液滋生，勾起你的食欲！'
+                ],
+                
+                // 其他美食推荐
+                otherFoods: [
+                    '面线糊', '四果汤', '春卷', '炸五香', '烧肉粽', '海蛎煎', '花生汤', '芋包'
+                ]
+            }
+        },
+        computed: {
+            // 计算美食总数
+            totalFoods() {
+                return this.foodDetails.length;
+            },
+            
+            // 获取推荐美食字符串
+            recommendedFoodsText() {
+                return this.otherFoods.join('、') + '……';
+            }
+        },
+        methods: {
+            // 滚动到指定美食
+            scrollToFood(anchor) {
+                const element = document.getElementById(anchor);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            },
+            
+            // 获取美食评分（模拟功能）
+            getFoodRating(foodId) {
+                const ratings = { 1: 4.8, 2: 4.5, 3: 4.7 };
+                return ratings[foodId] || 4.0;
+            },
+            
+            // 添加到收藏（模拟功能）
+            addToFavorites(foodName) {
+                console.log(`已将 ${foodName} 添加到收藏`);
+                // 这里可以添加实际的收藏功能
+            }
+        },
+        mounted() {
+            // 组件挂载后的操作
+            console.log('厦门美食页面已加载，包含', this.totalFoods, '种特色美食');
+            
+            // 可以添加一些页面加载后的初始化操作
+            this.initializePage();
+        },
+        methods: {
+            ...this.methods,
+            
+            // 初始化页面
+            initializePage() {
+                // 添加页面加载动画或其他初始化操作
+                console.log('美食页面初始化完成');
+            },
+            
+            // 美食搜索功能（预留）
+            searchFood(query) {
+                return this.foodDetails.filter(food => 
+                    food.name.includes(query) || 
+                    food.details.some(detail => detail.includes(query))
+                );
+            },
+            
+            // 获取美食类型标签
+            getFoodTags(foodId) {
+                const tags = {
+                    1: ['面食', '辣味', '海鲜'],
+                    2: ['海鲜', '清爽', '胶冻'],
+                    3: ['滋补', '温热', '药膳']
+                };
+                return tags[foodId] || [];
+            }
+        }
+    }).mount('#app');
+    </script>
+</body>
+</html>

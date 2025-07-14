@@ -1,531 +1,328 @@
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Xiamen!</title>
     <link rel="stylesheet" href="index.css">
-    
+    <script src="../vue.global.js"></script>
 </head>
 <body>
-    <header> 
-        <h1>厦门の美景</h1>
-    </header>
-    <nav>
-        <a href="../index.html">主页</a>
-        <a href="meijing.html">美景篇</a>
-        <a href="meishi.html">美食篇</a>
-        <a href="wenhua.html">文化篇</a>
-    </nav>
-    <br>
-    <div>
-        <a href=""><img class="image2" src="../img/scenery/00.jpg" /></a>
-    </div>
-    <div class="fifth">
-        <ul>
-            <p class="jianjie">
-                关于浪漫,海占一半</p>
-        </ul>
-    </div>
-    <br>
-    <p class="jianjie">
-        欢迎来到厦门的美景篇！
-        <br>让我们一同来领略厦门著名景点的风貌吧~
-    <br></p>
-    <p class="tiaozhuan">(点击图片下方文字可跳转)</p>
-    <table class="second">
-        <tr height=auto>
-            <td width="100">
-    
-            </td>
-            <td width="500">
-                      <div class="tupian">
-                          <chor1><img class="image1" src="../img/scenery/g.jpg" />
-                      </div>
-                  </a>
-              </td>
-              <td width="100">
-    
-              </td>
-              <td width="500">
-                      <div class="tupian">
-                          <img class="image1" src="../img/scenery/b.jpg" />
-                      </div>
-                  </a>    
-              </td>
-              <td width="100">
-    
-              </td>
-        </tr>
-        <tr height="20">
-            <td width="100" height="20">
-    
-            </td>
-            <td class="third">
-                          <span class="shuoming1"><a href="#gu">鼓浪屿</a></span>
-                        
-                      </div>
-              </div>
-              </td>
-              <td width="100" height="20">
-    
-              </td>
-            <td class="third">
-                        <span class="shuoming1"><a href="#bai">白城沙滩</a></span>
-                        
-                      </div>
-                  </div>      
-              </td>
-              <td width="100" height="20">
-    
-              </td>
-        </tr>
-        <tr height=auto>
-            <td width="100">
-    
-            </td>
-            <td width="500">
-                      <div class="tupian">
-                          <img class="image1" src="../img/scenery/xd.jpg" />
-                      </div>
-                  </a>
-              </td>
-              <td width="100">
-    
-              </td>
-              <td width="500">
-                      <div class="tupian">
-                          <img class="image1" src="../img/scenery/s.jpg" />
-                      </div>
-                  </a>    
-              </td>
-              <td width="100">
-    
-              </td>
-        </tr>
-        <tr height="20">
-            <td width="100" height="20">
-    
-            </td>
-            <td class="third">
-                          <span class="shuoming1"><a href="#xd">厦门大学</a></span>
-                        
-                      </div>
-              </div>
-              </td>
-              <td width="100" height="20">
-    
-              </td>
-            <td class="third">
-                        <span class="shuoming1"><a href="#sha">沙坡尾</a></span>
-                        
-                      </div>
-                  </div>      
-              </td>
-              <td width="100" height="20">
-    
-              </td>
-        </tr>
-        </table>
+    <div id="app">
+        <header> 
+            <h1>{{ title }}</h1>
+        </header>
+        <nav>
+            <a v-for="item in navs" :key="item.text" :href="item.href">{{ item.text }}</a>
+        </nav>
         <br>
-        <br>
-        <br>
-        <p class="biaoti" id="gu">···鼓浪屿···
-                <p class="jianjie">
-                    鼓浪屿，原名“圆沙洲”，别名“圆洲仔”，南宋时期命“五龙屿”，
-                    <br>自明朝雅化为今名称“鼓浪屿”，位于福建省厦门市思明区鼓浪屿街道，
-                    <br>鼓浪屿岛上海礁嶙峋，岸线迤逦，山峦叠翠，峰岩跌宕，鼓浪屿以建筑为表，音乐为魂。
-                </p>
-                <br>
-
-        <table class="second1">
-            <tr></tr>
-        <tr height=auto>
-            <td width="100">
-    
-            </td>
-            <td width="500">
-                      <div class="tupian">
-                          <img class="image1" src="../img/scenery/g1.jpg" />
-                      </div>
-                  </a>
-              </td>
-              <td width="100">
-    
-              </td>
-              <td width="500">
-                      <div class="tupian">
-                          <img class="image1" src="../img/scenery/g2.jpg" />
-                      </div>
-                  </a>    
-              </td>
-              <td width="100">
-    
-              </td>
-              <td width="500">
-                    <div class="tupian">
-                        <img class="image1" src="../img/scenery/g3.jpg" />
-                    </div>
-                </a>    
-            </td>
-            <td width="100">
-    
-            </td>
-        </tr>
-        <tr></tr>
-        </table>
         
-    <div class="neirong">
-        <ul>
-            <br>
-            <p class="jianjie1">
-                <blockquote>这座被称为「海上花园」的岛中之岛，建筑精美，琴声悠扬。</blockquote>
-                <blockquote>屿上2万人口，居民热爱音乐，钢琴拥有率居全国前茅，还被称为「琴岛」。</blockquote></p>
-            <p class="jianjie2">Tips:</p>
-            <p class="jianjie1">
-                船票<br>
-                船票预约: 小程序-屿见厦门 (可提前10天)<br>
-                <blockquote>船票含往返，回程不需要再次购票</blockquote>
-                <span class="jianjie1">游客日间航线有三条:</span><br>
-                <blockquote>邮轮中心厦鼓码头一三丘田码头 (35元 )</blockquote>
-                <blockquote>邮轮中心厦鼓码头一内厝澳码头 (50元)</blockquote>
-                <blockquote>第一码头一内厝澳码头 (50元，1小时一班)</blockquote>
-                <p class="jianjie1">如果要去打卡网红景点推荐到达三丘田码头!离大部分景点更近</p>
-            </p>
-            <p class="jianjie2">注意事项:</p>
-            <p class="jianjie1">⚪去鼓浪屿的船票按照购票时间点准到达哦，需提前候船检票，刷身份证检票。</p>
-            <br>
-        </ul>
-    </div>
-    <table class="second1">
-        <tr></tr>
-        <tr height=auto>
-            <td width="100">
-    
-            </td>
-            <td width="500">
-                      <div class="tupian">
-                          <img class="image1" src="../img/scenery/g4.jpg" />
-                      </div>
-                  </a>
-              </td>
-              <td width="100">
-    
-              </td>
-              <td width="500">
-                      <div class="tupian">
-                          <img class="image1" src="../img/scenery/g5.jpg" />
-                      </div>
-                  </a>    
-              </td>
-              <td width="100">
-    
-              </td>
-              <td width="500">
+        <!-- 顶部横幅图片 -->
+        <div>
+            <a href=""><img class="image2" :src="bannerImage" /></a>
+        </div>
+        
+        <!-- 诗意引言 -->
+        <div class="fifth">
+            <ul>
+                <p class="jianjie">{{ poeticQuote }}</p>
+            </ul>
+        </div>
+        <br>
+        
+        <!-- 欢迎文字 -->
+        <p class="jianjie">
+            {{ welcomeText.line1 }}
+            <br>{{ welcomeText.line2 }}
+        </p>
+        <p class="tiaozhuan">{{ tipText }}</p>
+        
+        <!-- 主要景点预览 -->
+        <table class="second">
+            <tr height=auto>
+                <td width="100"></td>
+                <td width="500" v-for="(attraction, index) in mainAttractions" :key="attraction.id">
                     <div class="tupian">
-                        <img class="image1" src="../img/scenery/g6.jpg" />
+                        <img class="image1" :src="attraction.image" />
                     </div>
-                </a>    
-            </td>
-            <td width="100">
-    
-            </td>
-            <tr></tr>
-        </tr>
-        </table>
-        <br>
-        <br>
-        <br>
-        <p class="biaoti" id="bai">···白城沙滩···
-            <p class="jianjie">
-                厦大白城位于厦门大学南部白城脚下，为演武大桥与胡里山炮台之间的一片美丽的沙滩。
-                <br>不仅是厦大学子，更多的厦门市民和游客喜欢到此漫步、游戏、游泳和观赏夕阳，这里是天然的休闲公园。
-                <br>厦大白城还有许多有趣的景致，半环型天桥犹如巨大的时钟，白城遗址上雕刻着各种抽象的方形图案……融合美丽景色与深厚的文化历史底蕴于一体。
-            </p>
-            <br>
-
-    <table class="second1">
-    <tr height=auto>
-        <td width="100">
-
-        </td>
-        <td width="500">
-                  <div class="tupian">
-                      <img class="image1" src="../img/scenery/b1.jpg" />
-                  </div>
-              </a>
-          </td>
-          <td width="100">
-
-          </td>
-          <td width="500">
-                  <div class="tupian">
-                      <img class="image1" src="../img/scenery/b2.jpg" />
-                  </div>
-              </a>    
-          </td>
-          <td width="100">
-
-          </td>
-          <td width="500">
-                <div class="tupian">
-                    <img class="image1" src="../img/scenery/b3.jpg" />
-                </div>
-            </a>    
-        </td>
-        <td width="100">
-
-        </td>
-    </tr>
-    </table>
-    
-<div class="neirong">
-    <ul>
-        <br>
-        <p class="jianjie1">
-            <blockquote>日落时分，白色海浪冲击着礁石，天上挂个咸蛋黄，潋滟的橘子海波光粼粼。</blockquote>
-            <blockquote>海岸边有游人钓落日，有靓女摆pose，有新人拍婚纱照......</blockquote></p>
-        <table>
-            <tr>
-                <td width="25%">
-                    <p class="jianjie2">海边活动：</p>
-                    <p class="jianjie1">①踩水<br>②拍照<br>③钓鱼<br>④看日落<br>⑤骑单车<br>⑥坐热气球</p>
-                    <br>
                 </td>
-                <td width="25%">
-                    <p class="jianjie2">拍照点位：</p>
-                    <p class="jianjie1">①岸边礁石<br>②白色半环形天桥<br>③沙滩树下<br>④热气球附近<br>⑤双子塔下<br><br></p>
-                    <br>
+                <td width="100" v-if="index < mainAttractions.length - 1"></td>
+                <td width="100"></td>
+            </tr>
+            <tr height="20">
+                <td width="100" height="20"></td>
+                <td class="third" v-for="(attraction, index) in mainAttractions" :key="'title-' + attraction.id">
+                    <span class="shuoming1">
+                        <a :href="'#' + attraction.anchor">{{ attraction.name }}</a>
+                    </span>
                 </td>
-                
+                <td width="100" height="20" v-if="index < mainAttractions.length - 1"></td>
+                <td width="100" height="20"></td>
             </tr>
         </table>
-    </ul>
-</div>
-<table class="second1">
-    <tr height=auto>
-        <td width="100">
+        
+        <br><br><br>
+        
+        <!-- 景点详情动态组件 -->
+        <div v-for="attraction in attractionDetails" :key="attraction.id" class="attraction-section">
+            <p class="biaoti" :id="attraction.anchor">···{{ attraction.name }}···</p>
+            <p class="jianjie">
+                <span v-for="(line, index) in attraction.description" :key="index">
+                    {{ line }}<br v-if="index < attraction.description.length - 1">
+                </span>
+            </p>
+            <br>
 
-        </td>
-        <td width="500">
-                  <div class="tupian">
-                      <img class="image1" src="../img/scenery/b4.jpg" />
-                  </div>
-              </a>
-          </td>
-          <td width="100">
-
-          </td>
-          <td width="500">
-                  <div class="tupian">
-                      <img class="image1" src="../img/scenery/b6.jpg" />
-                  </div>
-              </a>    
-          </td>
-          <td width="100">
-
-          </td>
-          <td width="500">
-                <div class="tupian">
-                    <img class="image1" src="../img/scenery/b5.jpg" />
-                </div>
-            </a>    
-        </td>
-        <td width="100">
-
-        </td>
-    </tr>
-    </table>
-
-<br>
-<br>
-<br>
-<p class="biaoti" id="xd">···厦门大学···
-    <p class="jianjie">
-        依山傍海·花园学府·面朝大海
-        <br>面朝大海、内拥芙蓉湖，棕榈树林荫道贯穿其中，是名符其实的山海花园、浪漫之地。
-        <br>体验百年学府的深厚积淀，感受百年名校的底蕴和气质，漫步在山海之间，领悟“自强不息，止于至善”的真谛。
-    </p>
-    <br>
-
-<table class="second1">
-<tr height=auto>
-<td width="100">
-
-</td>
-<td width="500">
-          <div class="tupian">
-              <img class="image1" src="../img/scenery/xd2.jpg" />
-          </div>
-      </a>
-  </td>
-  <td width="100">
-
-  </td>
-  <td width="500">
-          <div class="tupian">
-              <img class="image1" src="../img/scenery/xd3.jpg" />
-          </div>
-      </a>    
-  </td>
-  <td width="100">
-
-  </td>
-  <td width="500">
-        <div class="tupian">
-            <img class="image1" src="../img/scenery/xd6.jpg" />
+            <!-- 第一组图片展示 -->
+            <table class="second1">
+                <tr height=auto>
+                    <td width="100"></td>
+                    <td width="500" v-for="image in attraction.images.slice(0, 3)" :key="image">
+                        <div class="tupian">
+                            <img class="image1" :src="image" />
+                        </div>
+                    </td>
+                    <td width="100" v-for="n in Math.max(0, 3 - attraction.images.slice(0, 3).length)" :key="'empty-' + n"></td>
+                    <td width="100"></td>
+                </tr>
+            </table>
+            
+            <!-- 详细内容区域 -->
+            <div class="neirong">
+                <ul>
+                    <br>
+                    <!-- 亮点引述 -->
+                    <p class="jianjie1">
+                        <blockquote v-for="quote in attraction.highlights" :key="quote">{{ quote }}</blockquote>
+                    </p>
+                    
+                    <!-- 表格形式的特殊信息 -->
+                    <table v-if="attraction.specialInfo && attraction.specialInfo.type === 'table'">
+                        <tr>
+                            <td v-for="column in attraction.specialInfo.columns" :key="column.title" :width="column.width">
+                                <p class="jianjie2">{{ column.title }}：</p>
+                                <p class="jianjie1" v-html="column.content"></p>
+                                <br>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    <!-- 普通信息块 -->
+                    <div v-else-if="attraction.specialInfo">
+                        <p class="jianjie2">{{ attraction.specialInfo.title }}</p>
+                        <p class="jianjie1" v-html="attraction.specialInfo.content"></p>
+                        <br>
+                    </div>
+                    
+                    <!-- 提示信息 -->
+                    <div v-if="attraction.tips">
+                        <p class="jianjie2">{{ attraction.tips.title }}：</p>
+                        <p class="jianjie1" v-html="attraction.tips.content"></p>
+                        <br>
+                    </div>
+                </ul>
+            </div>
+            <br><br><br>
         </div>
-    </a>    
-</td>
-<td width="100">
-
-</td>
-</tr>
-</table>
-
-<div class="neirong">
-<ul>
-<br>
-<p class="jianjie1">
-    <blockquote>漫步于此，感受一种静谧而美好的氛国，既有历史的厚重感，也有现代的活力与朝气。</blockquote>
-    <blockquote>“致吾知于无央，充吾爱于无疆。”</blockquote></p>
-<p class="jianjie2">预约流程：</p>
-<p class="jianjie1">关注“厦门大学访客预约系统”微信公众号-点击“参观预约”进行预约界面<br>(需实名，每人最多可添加4名同行人员)</p>
-<br>
-<p class="jianjie2">预约开放时间：</p>
-<p class="jianjie1">开放预约时间为每天8:00，12:00，16:00，不接受现场预约。<br>预约至少提前1天、最多可提前3天(准点抢会比较容易抢到哦)</p><br>
-</ul>
-</div>
-<table class="second1">
-<tr height=auto>
-<td width="100">
-
-</td>
-<td width="500">
-          <div class="tupian">
-              <img class="image1" src="../img/scenery/xd5.jpg" />
-          </div>
-  </td>
-  <td width="100">
-
-  </td>
-  <td width="500">
-          <div class="tupian">
-              <img class="image1" src="../img/scenery/xd1.jpg" />
-          </div>   
-  </td>
-  <td width="100">
-
-  </td>
-  <td width="500">
-        <div class="tupian">
-            <img class="image1" src="../img/scenery/xd4.jpg" />
-        </div>
-    </a>    
-</td>
-<td width="100">
-
-</td>
-</tr>
-</table>
-<br>
-<br>
-<br>
-<p class="biaoti" id="sha">···沙坡尾···
-    <p class="jianjie">
-        沙坡尾历史悠久，这里曾是厦门港的发源地。<br>自宋代以来就是渔民们停泊渔船的地方，不仅见证了郑成功收复台湾的英雄壮举，也承载了厦门港口城市工业文明的记忆。
-        <br>“老厦门遇见新文艺”，沙坡尾是个“左手传统，右手新潮”的艺术区。
-        <br>体验奇妙的城市新旧文化的碰撞，感受年轻、自由、创意、包容的市集文化。
-    <br></p>
-
-<table class="second1">
-<tr height=auto>
-<td width="100">
-
-</td>
-<td width="500">
-          <div class="tupian">
-              <img class="image1" src="../img/scenery/s6.jpg" />
-          </div>
-      </a>
-  </td>
-  <td width="100">
-
-  </td>
-  <td width="500">
-          <div class="tupian">
-              <img class="image1" src="../img/scenery/s5.jpg" />
-          </div>
-      </a>    
-  </td>
-  <td width="100">
-
-  </td>
-  <td width="500">
-        <div class="tupian">
-            <img class="image1" src="../img/scenery/s4.jpg" />
-        </div>
-    </a>    
-</td>
-<td width="100">
-
-</td>
-</tr>
-</table>
-
-<div class="neirong">
-<ul>
-<br>
-<p class="jianjie1">
-    <blockquote>现在的沙坡尾文艺，浪漫，潮流与古韵的融合，踏入其间，仿佛走进了宫崎骏的漫画世界。</blockquote>
-    <blockquote>充满闽南特色的建筑风格，以红砖黑瓦、石雕、木雕为主要特色，每一栋建筑都充满了浓厚的历史气息。</blockquote>
-    <blockquote>在这里可以欣赏到厦门最早的骑楼建筑，感受厦门传统文化的独特魅力。</blockquote>
-</p>
-
-<p class="jianjie2">标志打卡点：</p>
-<p class="jianjie1">①沙坡尾彩虹墙：一览沙坡尾“山·海·城”的独特地貌<br>②不辍旧物馆：藏着厦门的旧时光，勾起你曾经的回忆<br>③厦门的查查斯：贩卖可爱，收获浪漫</p>
-<br>
-</ul>
-</div>
-<table class="second1">
-<tr height=auto>
-<td width="100">
-
-</td>
-<td width="500">
-          <div class="tupian">
-              <img class="image1" src="../img/scenery/s1.jpg" />
-          </div>
-      </a>
-  </td>
-  <td width="100">
-
-  </td>
-  <td width="500">
-          <div class="tupian">
-              <img class="image1" src="../img/scenery/s2.jpg" />
-          </div>
-      </a>    
-  </td>
-  <td width="100">
-
-  </td>
-  <td width="500">
-        <div class="tupian">
-            <img class="image1" src="../img/scenery/s3.jpg" />
-        </div>
-    </a>    
-</td>
-<td width="100">
-
-</td>
-</tr>
-</table>
-<br>
-<br>
-<br>
-<br>
-<p class="jianjie">
-    除了以上介绍的四处景点，厦门还有很多精彩等待着你来探索……
-    <br>是万石植物园中的繁茂生长，是十里长堤边的自由浪漫，是南普陀寺中的琉璃灯……
-    <br>或许也只是吹一吹海风，漫步于大街小巷之间……
-    <br>厦门的浪漫与美好藏在每个细节中，期待着大家的发现！
-<br></p>
-<br><br><br>
+        
+        <!-- 结尾总结 -->
+        <p class="jianjie">
+            {{ conclusion.text }}
+            <br v-for="line in conclusion.lines" :key="line">{{ line }}
+        </p>
+        <br><br><br>
+    </div>
+    
+    <script>
+    const { createApp } = Vue;
+    createApp({
+        data() {
+            return {
+                title: '厦门の美景',
+                navs: [
+                    { text: '主页', href: '../index.html' },
+                    { text: '美景篇', href: 'meijing.html' },
+                    { text: '美食篇', href: 'meishi.html' },
+                    { text: '文化篇', href: 'wenhua.html' }
+                ],
+                bannerImage: '../img/scenery/00.jpg',
+                poeticQuote: '关于浪漫,海占一半',
+                welcomeText: {
+                    line1: '欢迎来到厦门的美景篇！',
+                    line2: '让我们一同来领略厦门著名景点的风貌吧~'
+                },
+                tipText: '(点击图片下方文字可跳转)',
+                
+                // 主要景点预览
+                mainAttractions: [
+                    { id: 1, name: '鼓浪屿', image: '../img/scenery/g.jpg', anchor: 'gu' },
+                    { id: 2, name: '白城沙滩', image: '../img/scenery/b.jpg', anchor: 'bai' },
+                    { id: 3, name: '厦门大学', image: '../img/scenery/xd.jpg', anchor: 'xd' },
+                    { id: 4, name: '沙坡尾', image: '../img/scenery/s.jpg', anchor: 'sha' }
+                ],
+                
+                // 详细景点信息
+                attractionDetails: [
+                    {
+                        id: 1,
+                        name: '鼓浪屿',
+                        anchor: 'gu',
+                        description: [
+                            '鼓浪屿，原名"圆沙洲"，别名"圆洲仔"，南宋时期命"五龙屿"，',
+                            '自明朝雅化为今名称"鼓浪屿"，位于福建省厦门市思明区鼓浪屿街道，',
+                            '鼓浪屿岛上海礁嶙峋，岸线迤逦，山峦叠翠，峰岩跌宕，鼓浪屿以建筑为表，音乐为魂。'
+                        ],
+                        images: [
+                            '../img/scenery/g1.jpg',
+                            '../img/scenery/g2.jpg',
+                            '../img/scenery/g3.jpg',
+                            '../img/scenery/g4.jpg',
+                            '../img/scenery/g5.jpg',
+                            '../img/scenery/g6.jpg'
+                        ],
+                        highlights: [
+                            '这座被称为「海上花园」的岛中之岛，建筑精美，琴声悠扬。',
+                            '屿上2万人口，居民热爱音乐，钢琴拥有率居全国前茅，还被称为「琴岛」。'
+                        ],
+                        specialInfo: {
+                            title: 'Tips',
+                            content: `船票<br>
+                                     船票预约: 小程序-屿见厦门 (可提前10天)<br>
+                                     <blockquote>船票含往返，回程不需要再次购票</blockquote>
+                                     <span class="jianjie1">游客日间航线有三条:</span><br>
+                                     <blockquote>邮轮中心厦鼓码头一三丘田码头 (35元 )</blockquote>
+                                     <blockquote>邮轮中心厦鼓码头一内厝澳码头 (50元)</blockquote>
+                                     <blockquote>第一码头一内厝澳码头 (50元，1小时一班)</blockquote>
+                                     <p class="jianjie1">如果要去打卡网红景点推荐到达三丘田码头!离大部分景点更近</p>`
+                        },
+                        tips: {
+                            title: '注意事项',
+                            content: '⚪去鼓浪屿的船票按照购票时间点准到达哦，需提前候船检票，刷身份证检票。'
+                        }
+                    },
+                    {
+                        id: 2,
+                        name: '白城沙滩',
+                        anchor: 'bai',
+                        description: [
+                            '厦大白城位于厦门大学南部白城脚下，为演武大桥与胡里山炮台之间的一片美丽的沙滩。',
+                            '不仅是厦大学子，更多的厦门市民和游客喜欢到此漫步、游戏、游泳和观赏夕阳，这里是天然的休闲公园。',
+                            '厦大白城还有许多有趣的景致，半环型天桥犹如巨大的时钟，白城遗址上雕刻着各种抽象的方形图案……融合美丽景色与深厚的文化历史底蕴于一体。'
+                        ],
+                        images: [
+                            '../img/scenery/b1.jpg',
+                            '../img/scenery/b2.jpg',
+                            '../img/scenery/b3.jpg',
+                            '../img/scenery/b4.jpg',
+                            '../img/scenery/b6.jpg',
+                            '../img/scenery/b5.jpg'
+                        ],
+                        highlights: [
+                            '日落时分，白色海浪冲击着礁石，天上挂个咸蛋黄，潋滟的橘子海波光粼粼。',
+                            '海岸边有游人钓落日，有靓女摆pose，有新人拍婚纱照......'
+                        ],
+                        specialInfo: {
+                            type: 'table',
+                            columns: [
+                                {
+                                    title: '海边活动',
+                                    width: '25%',
+                                    content: '①踩水<br>②拍照<br>③钓鱼<br>④看日落<br>⑤骑单车<br>⑥坐热气球'
+                                },
+                                {
+                                    title: '拍照点位',
+                                    width: '25%',
+                                    content: '①岸边礁石<br>②白色半环形天桥<br>③沙滩树下<br>④热气球附近<br>⑤双子塔下'
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        id: 3,
+                        name: '厦门大学',
+                        anchor: 'xd',
+                        description: [
+                            '依山傍海·花园学府·面朝大海',
+                            '面朝大海、内拥芙蓉湖，棕榈树林荫道贯穿其中，是名符其实的山海花园、浪漫之地。',
+                            '体验百年学府的深厚积淀，感受百年名校的底蕴和气质，漫步在山海之间，领悟"自强不息，止于至善"的真谛。'
+                        ],
+                        images: [
+                            '../img/scenery/xd2.jpg',
+                            '../img/scenery/xd3.jpg',
+                            '../img/scenery/xd6.jpg',
+                            '../img/scenery/xd5.jpg',
+                            '../img/scenery/xd1.jpg',
+                            '../img/scenery/xd4.jpg'
+                        ],
+                        highlights: [
+                            '漫步于此，感受一种静谧而美好的氛围，既有历史的厚重感，也有现代的活力与朝气。',
+                            '"致吾知于无央，充吾爱于无疆。"'
+                        ],
+                        specialInfo: {
+                            title: '预约流程',
+                            content: '关注"厦门大学访客预约系统"微信公众号-点击"参观预约"进行预约界面<br>(需实名，每人最多可添加4名同行人员)'
+                        },
+                        tips: {
+                            title: '预约开放时间',
+                            content: '开放预约时间为每天8:00，12:00，16:00，不接受现场预约。<br>预约至少提前1天、最多可提前3天(准点抢会比较容易抢到哦)'
+                        }
+                    },
+                    {
+                        id: 4,
+                        name: '沙坡尾',
+                        anchor: 'sha',
+                        description: [
+                            '沙坡尾历史悠久，这里曾是厦门港的发源地。自宋代以来就是渔民们停泊渔船的地方，不仅见证了郑成功收复台湾的英雄壮举，也承载了厦门港口城市工业文明的记忆。',
+                            '"老厦门遇见新文艺"，沙坡尾是个"左手传统，右手新潮"的艺术区。',
+                            '体验奇妙的城市新旧文化的碰撞，感受年轻、自由、创意、包容的市集文化。'
+                        ],
+                        images: [
+                            '../img/scenery/s6.jpg',
+                            '../img/scenery/s5.jpg',
+                            '../img/scenery/s4.jpg',
+                            '../img/scenery/s1.jpg',
+                            '../img/scenery/s2.jpg',
+                            '../img/scenery/s3.jpg'
+                        ],
+                        highlights: [
+                            '现在的沙坡尾文艺，浪漫，潮流与古韵的融合，踏入其间，仿佛走进了宫崎骏的漫画世界。',
+                            '充满闽南特色的建筑风格，以红砖黑瓦、石雕、木雕为主要特色，每一栋建筑都充满了浓厚的历史气息。',
+                            '在这里可以欣赏到厦门最早的骑楼建筑，感受厦门传统文化的独特魅力。'
+                        ],
+                        specialInfo: {
+                            title: '标志打卡点',
+                            content: '①沙坡尾彩虹墙：一览沙坡尾"山·海·城"的独特地貌<br>②不辍旧物馆：藏着厦门的旧时光，勾起你曾经的回忆<br>③厦门的查查斯：贩卖可爱，收获浪漫'
+                        }
+                    }
+                ],
+                
+                // 结尾总结
+                conclusion: {
+                    text: '除了以上介绍的四处景点，厦门还有很多精彩等待着你来探索……',
+                    lines: [
+                        '是万石植物园中的繁茂生长，是十里长堤边的自由浪漫，是南普陀寺中的琉璃灯……',
+                        '或许也只是吹一吹海风，漫步于大街小巷之间……',
+                        '厦门的浪漫与美好藏在每个细节中，期待着大家的发现！'
+                    ]
+                }
+            }
+        },
+        computed: {
+            // 可以添加计算属性来处理数据
+            totalAttractions() {
+                return this.attractionDetails.length;
+            }
+        },
+        methods: {
+            // 可以添加方法来处理用户交互
+            scrollToAttraction(anchor) {
+                document.getElementById(anchor).scrollIntoView({ behavior: 'smooth' });
+            }
+        },
+        mounted() {
+            // 组件挂载后的操作
+            console.log('厦门美景页面已加载');
+        }
+    }).mount('#app');
+    </script>
+</body>
+</html>
